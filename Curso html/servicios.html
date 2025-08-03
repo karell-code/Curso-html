@@ -15,46 +15,49 @@
     <section class="servicios">
       <h2>¿Qué necesitas?</h2>
       <!-- Formulario que envía datos a Google Apps Script -->
-<form action="https://script.google.com/macros/s/AKfycby1PNxT-jG_2lxIFaHvRMBtjeIenVwDimCnhZ_GTzZmz69fyUAjVzi9Hk7fZn_Nw5Q0Bg/exec" method="post">
-  <!-- Campo oculto para redirigir después de enviar (opcional) -->
+<!-- Formulario que envía los datos a Google Apps Script y luego redirige a gracias.html -->
+<form action="https://script.google.com/macros/s/AKfycby1PNxT-jG_2lxIFaHvRMBtjeIenVwDimCnhZ_GTzZmz69fyUAjVzi9Hk7fZn_Nw5Q0Bg/exec " method="post" target="_self">
+  <!-- Campo oculto que le dice al script a dónde redirigir después de guardar -->
   <input type="hidden" name="redirect" value="https://karell-code.github.io/Curso-html/gracias.html">
-        <label>
-          Nombre / Institución
-          <input type="text" name="nombre" required>
-        </label>
 
-        <label>
-          Correo electrónico
-          <input type="email" name="correo" required>
-        </label>
+  <!-- Campo para nombre o institución -->
+  <label>
+    Nombre / Institución
+    <input type="text" name="nombre" required>
+  </label>
 
-        <label>
-          Tipo de servicio
-          <select name="tipo">
-            <option>Análisis de datos</option>
-            <option>Revisión estadística</option>
-            <option>Tutoría personalizada</option>
-            <option>Consultoría completa</option>
-          </select>
-        </label>
+  <!-- Campo para correo electrónico -->
+  <label>
+    Correo electrónico
+    <input type="email" name="correo" required>
+  </label>
 
-        <label>
-          Descripción breve del proyecto
-          <textarea name="mensaje" rows="4" placeholder="Objetivos, tamaño muestral, software que usas…" required></textarea>
-        </label>
+  <!-- Lista desplegable con tipos de servicio -->
+  <label>
+    Tipo de servicio
+    <select name="tipo">
+      <option>Análisis de datos</option>
+      <option>Revisión estadística</option>
+      <option>Tutoría personalizada</option>
+      <option>Consultoría completa</option>
+    </select>
+  </label>
 
-        <label>
-          Fecha límite
-          <input type="date" name="fecha">
-        </label>
+  <!-- Texto amplio para explicar el proyecto -->
+  <label>
+    Descripción breve del proyecto
+    <textarea name="mensaje" rows="4" placeholder="Objetivos, tamaño muestral, software que usas…" required></textarea>
+  </label>
 
-          <label>
-          Presupuesto proyecto
-          <input type="number">
-        </label>
+  <!-- Fecha límite deseada -->
+  <label>
+    Fecha límite
+    <input type="date" name="fecha">
+  </label>
 
-        <button type="submit">Enviar solicitud</button>
-      </form>
+  <!-- Botón de envío -->
+  <button type="submit">Enviar solicitud</button>
+</form>
     </section>
   </main>
 
