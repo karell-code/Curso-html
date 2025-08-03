@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Contacto</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header>
+    <h1>Contacto</h1>
+    <nav>
+      <a href="index.html">Inicio</a> |
+      <a href="about.html">Sobre mí</a> |
+    </nav>
+  </header>
+
+  <main>
+    <p>Si quieres decirme algo, usa este formulario:</p>
+
+    <form action="https://httpbin.org/post" method="post">
+      <label>
+        Nombre:
+        <input type="text" name="nombre" required>
+      </label>
+      <br><br>
+
+      <label>
+        Correo:
+        <input type="email" name="correo" required>
+      </label>
+      <br><br>
+
+      <label>
+        Mensaje:
+        <textarea name="mensaje" rows="5" required></textarea>
+      </label>
+      <br><br>
+
+      
+      <label>Teléfono: <input type="tel" name="Teléfono"></label>
+      <br><br>
+      <button type="submit">Enviar</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 – Curso de HTML paso a paso. Pinnga</p>
+  </footer>
+</body>
+</html>

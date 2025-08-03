@@ -1,0 +1,79 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #a0e1e7;
+    color: #333;
+    margin: 40px;
+  }
+  
+  h1 {
+    color: #0a0a0a;
+    text-align: center;
+  }
+  
+  img {
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+  }
+  
+  a {
+    color: #0066cc;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #ff6600;
+  }
+  /* Estilos para la estructura semántica */
+header, footer {
+  background-color: #e0e0e0;
+  padding: 20px;
+  text-align: center;
+}
+
+nav a {
+  margin: 0 10px;
+  font-weight: bold;
+}
+/* Estilos para el formulario */
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #0066cc;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ff6600;
+}
+table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  background: #fff;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+}
+
+th {
+  background-color: #0066cc;
+  color: white;
+}
