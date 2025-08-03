@@ -77,3 +77,236 @@ th {
   background-color: #0066cc;
   color: white;
 }
+/* Móviles */
+@media (max-width: 600px) {
+  body {
+    margin: 10px;
+    font-size: 16px;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  table, img {
+    width: 100%;
+  }
+
+  table thead {
+    display: none;        /* oculta encabezado en móvil */
+  }
+
+  table tr {
+    display: block;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    padding: 8px;
+  }
+
+  td {
+    display: block;
+    border: none;
+    padding: 4px 0;
+  }
+}
+#hero {
+  background: #0066cc;
+  color: #fff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+btn {
+  background: #ff6600;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 20px;
+  display: inline-block;
+}
+
+/* bton ad cursos */
+.btn-add {
+  background: #0066cc;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+/* Grid de cursos */
+.grid-cursos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.curso {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.15);
+  overflow: hidden;
+  text-align: center;
+}
+
+.curso img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.curso h2 {
+  margin: 12px 0 6px;
+  color: #0066cc;
+}
+
+.curso p {
+  margin: 0 0 16px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.curso a {
+  display: inline-block;
+  margin-bottom: 16px;
+  padding: 8px 20px;
+  background: #ff6600;
+  color: #fff;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.curso a:hover {
+  background: #e55a00;
+}
+/* Noticias */
+.news-list {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.news-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  padding: 20px;
+}
+
+.news-card h2 { margin-top: 0; color:#0066cc; }
+.news-card .date { color:#777; font-size:0.9rem; }
+.news-card a { color:#ff6600; font-weight:bold; text-decoration:none; }
+
+/*estilos de servicios*/
+
+.servicios {
+  max-width: 600px;
+  margin: 40px auto;
+  background: #6c85bb;   /* azul muy claro */
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.15);
+}
+.servicios label {
+  display: block;
+  margin: 15px 0 5px;
+}
+.servicios input,
+.servicios select,
+.servicios textarea {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.servicios button {
+  margin-top: 20px;
+  background: #0066cc;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.servicios button:hover {
+  background: #004c99;
+}
+/* Foro */
+.forum { max-width: 800px; margin: 40px auto; padding: 0 20px; }
+
+.thread {
+  background: #fff;
+  border-left: 4px solid #ff6600;
+  margin-bottom: 15px;
+  padding: 15px 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.08);
+}
+
+.thread h3 { margin: 0 0 5px; font-size: 1.1rem; }
+.thread h3 a { color:#0066cc; text-decoration:none; }
+.thread .meta { margin: 0; font-size: .85rem; color:#555; }
+
+.btn-add {
+  background:#0066cc;
+  color:#fff;
+  border:none;
+  padding:10px 20px;
+  border-radius:4px;
+  cursor:pointer;
+  margin-top:20px;
+}
+.btn-add:hover { background:#004c99; }
+/* estilos.css – Ajustes finales para la versión 1.0 */
+
+/* Reset básico */
+*{margin:0;padding:0;box-sizing:border-box;} /* Elimina márgenes y paddings por defecto y usa modelo border-box */
+
+body{
+  font-family: Arial, sans-serif; /* Fuente limpia y legible */
+  background:#f5f7fa; /* Fondo gris muy claro para reducir fatiga visual */
+  color:#333; /* Color de texto oscuro para contraste alto */
+  line-height:1.6; /* Espaciado entre líneas para mejorar lectura */
+}
+
+header{
+  background:#0066cc; /* Azul corporativo */
+  color:#fff; /* Texto blanco sobre fondo azul */
+  padding:20px 0; /* Espacio interno arriba y abajo */
+  text-align:center; /* Centra el título y la navegación */
+}
+
+nav a{
+  color:#fff; /* Enlaces de navegación en blanco */
+  margin:0 15px; /* Espacio horizontal entre enlaces */
+  text-decoration:none; /* Quita el subrayado */
+  font-weight:bold; /* Negrita para mejor legibilidad */
+}
+
+#hero{
+  background:linear-gradient(135deg,#0066cc,#2E8B57); /* Degradado atractivo */
+  color:#fff; /* Texto blanco */
+  padding:80px 20px; /* Espaciado generoso para impacto visual */
+  text-align:center; /* Centra contenido */
+}
+
+.btn{
+  background:#ff6600; /* Naranja para llamar la atención */
+  color:#fff; /* Texto blanco */
+  padding:12px 24px; /* Espacio interno del botón */
+  border-radius:5px; /* Bordes redondeados */
+  text-decoration:none; /* Sin subrayado */
+  display:inline-block; /* Permite márgenes y padding sin ocupar todo el ancho */
+  margin-top:20px; /* Separación respecto al párrafo anterior */
+}
+
+.btn:hover{
+  background:#e55a00; /* Color más oscuro al pasar el ratón para feedback visual */
+}

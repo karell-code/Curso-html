@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Certificado – Módulo 1</title>
+  <link rel="stylesheet" href="estilos.css">
+  <style>
+    body{background:#f5f7fa;font-family:Arial,sans-serif;padding:40px;} /* Fondo neutro */
+    .cert{background:#fff;border:10px solid #0066cc;padding:60px;text-align:center;max-width:700px;margin:auto;}
+    .cert h1{color:#0066cc;font-size:2.5rem;margin-bottom:20px;}
+    .cert p{font-size:1.2rem;margin:10px 0;}
+    .btn-print{background:#ff6600;color:#fff;padding:12px 24px;border:none;border-radius:4px;cursor:pointer;}
+  </style>
+</head>
+<body>
+  <div class="cert">
+    <h1>Certificado de Finalización</h1>
+    <p><strong>Nombre:</strong> <span id="name">Estudiante</span></p> <!-- Nombre dinámico después -->
+    <p><strong>Módulo:</strong> Introducción a la Inferencia Estadística</p>
+    <p><strong>Fecha:</strong> <span id="date"></span></p> <!-- Se rellena con JS -->
+    <button class="btn-print" onclick="window.print()">Imprimir</button> <!-- Abre diálogo de impresión -->
+  </div>
+
+  <script>
+    // Rellena la fecha actual
+    const today = new Date().toLocaleDateString('es-ES'); // Formato dd/mm/aaaa
+    document.getElementById('date').textContent = today;
+  </script>
+</body>
+</html>

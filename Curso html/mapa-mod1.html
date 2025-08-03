@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mapa mental – Módulo 1</title>
+  <link rel="stylesheet" href="estilos.css">
+  <style>
+    .map-container { max-width: 800px; margin: 40px auto; background:#fff; padding:20px; border-radius:8px; }
+    svg { width: 100%; height: auto; }
+    .node  { cursor: pointer; transition: .3s; }
+    .node:hover { stroke: #ff6600; stroke-width: 3; }
+    .tooltip { position: absolute; background:#333; color:#fff; padding:6px 10px;
+               border-radius:4px; font-size: 14px; pointer-events:none; opacity:0; transition:.2s; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Mapa mental – Módulo 1</h1>
+    <nav>
+      <a href="cursos.html">← Volver a Cursos</a>
+    </nav>
+  </header>
+
+  <main class="map-container">
+    <svg viewBox="0 0 600 400" aria-labelledby="title">
+      <title id="title">Mapa mental Inferencia</title>
+
+      <!-- Nodo central -->
+      <rect class="node" x="250" y="180" width="100" height="40" rx="5" fill="#0066cc"
+            data-info="Concepto central de la unidad"/>
+
+      <!-- Población -->
+      <rect class="node" x="50" y="100" width="100" height="30" rx="5" fill="#2E8B57"
+            data-info="Conjunto completo de elementos"/>
+      <line x1="150" y1="115" x2="250" y2="185" stroke="#ccc"/>
+
+      <!-- Muestra -->
+      <rect class="node" x="50" y="200" width="100" height="30" rx="5" fill="#2E8B57"
+            data-info="Subconjunto extraído de la población"/>
+      <line x1="150" y1="215" x2="250" y2="200"/>
+
+      <!-- Parámetro -->
+      <rect class="node" x="450" y="100" width="100" height="30" rx="5" fill="#4682B4"
+            data-info="Medida desconocida de la población"/>
+      <line x1="350" y1="185" x2="450" y2="115"/>
+
+      <!-- Estadístico -->
+      <rect class="node" x="450" y="200" width="100" height="30" rx="5" fill="#4682B4"
+            data-info="Medida calculada con la muestra"/>
+      <line x1="350" y1="200" x2="450" y2="215"/>
+
+      <!-- Textos -->
+      <text x="300" y="205" text-anchor="middle" fill="#fff" font-size="14">Inferencia</text>
+      <text x="100" y="120" text-anchor="middle" font-size="12">Población</text>
+      <text x="100" y="220" text-anchor="middle" font-size="12">Muestra</text>
+      <text x="500" y="120" text-anchor="middle" font-size="12">Parámetro</text>
+      <text x="500" y="220" text-anchor="middle" font-size="12">Estadístico</text>
+    </svg>
+
+    <div class="tooltip" id="tooltip"></div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 – Bioestadística Fácil</p>
+  </footer>
+
+  <script>
+    const nodes   = document.querySelectorAll('.node');
+    const tooltip = document.getElementById('tooltip');
+
+    nodes.forEach(n => {
+      n.addEventListener('mouseenter', e => {
+        tooltip.textContent = n.dataset.info;
+        tooltip.style.opacity = 1;
+      });
+      n.addEventListener('mousemove', e => {
+        tooltip.style.left = e.pageX + 10 + 'px';
+        tooltip.style.top  = e.pageY - 30 + 'px';
+      });
+      n.addEventListener('mouseleave', () => tooltip.style.opacity = 0);
+    });
+  </script>
+</body>
+</html>

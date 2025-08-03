@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Buscador interno</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header>
+    <h1>Buscador rápido</h1>
+    <nav><a href="index.html">← Inicio</a></nav>
+  </header>
+
+  <main style="max-width:600px;margin:40px auto;">
+    <!-- Campo donde el usuario escribe -->
+    <input id="searchBox" type="text" placeholder="Busca cursos, noticias...">
+    <!-- Lista vacía que se llenará con JS -->
+    <ul id="results"></ul>
+  </main>
+
+  <!-- Script ligero que filtra contenido -->
+  <script>
+    // Array con objetos de contenido indexado
+    const pages = [
+      {title:'Curso Inferencia', url:'cursos.html'},
+      {title:'Quiz Módulo 1', url:'quiz-mod1.html'},
+      {title:'Noticias', url:'noticias.html'},
+      {title:'Servicios', url:'servicios.html'}
+    ];
+
+    const box    = document.getElementById('searchBox');   // Referencia al input
+    const list   = document.getElementById('results');     // Referencia a la lista
+
+    // Escucha cada vez que el usuario escribe
+    box.addEventListener('input', () => {
+      const q = box.value.toLowerCase();                   // Texto tecleado en minúsculas
+      list.innerHTML = '';                                 // Limpia resultados anteriores
+
+      // Filtra títulos que contengan el texto
+      const found = pages.filter(p => p.title.toLowerCase().includes(q));
+      found.forEach(p => {
+        const li = document.createElement('li');           // Crea elemento <li>
+        li.innerHTML = `<a href="${p.url}">${p.title}</a>`; // Texto y enlace
+        list.appendChild(li);                              // Añade a la lista visible
+      });
+    });
+  </script>
+</body>
+</html>

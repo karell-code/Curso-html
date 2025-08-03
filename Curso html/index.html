@@ -1,31 +1,55 @@
+<!-- index.html  –  Página de bienvenida con banner hero -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
-   <meta charset="UTF-8">
-  <title>Primer paso con VS Code</title>
-  <link rel="stylesheet" href="estilos.css">
+  <meta charset="UTF-8"> <!-- Define juego de caracteres UTF-8 para ñ y acentos -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Hace que el sitio se adapte a móviles -->
+  <title>Bioestadística Fácil – v1.0</title> <!-- Título que aparece en la pestaña del navegador -->
+  <link rel="stylesheet" href="estilos.css"> <!-- Enlaza la hoja de estilos externa -->
 </head>
 <body>
-  <body>
-    <header>
-      <h1>¡Hola, mundo!</h1>
-      <nav>
-        <a href="index.html">Inicio</a> |
-        <a href="about.html">Sobre mí</a>|
-        <a href="contacto.html">Contacto</a>
-      </nav>
-    </header>
-      <main>
-      <p>Estoy programando con VS Code</p>
-      <img src="logo_universidad.png" alt="logo_universidad" width="50">
-      <p>
-        <a href="https://uvs.ltu.sld.cu/" target="_blank">Ir a UVS</a><br>
-        <a href="about.html">Conoce más sobre mí</a>
-      </p>
-    </main>
-  
-    <footer>
-      <p>&copy; 2025 – Curso de HTML paso a paso. Autor: Dr. Karell R. Vazquez Argote</p>
-    </footer>
-  </body>
+  <header>
+    <h1>Bioestadística Fácil</h1> <!-- Nombre principal del sitio -->
+    <nav>
+      <a href="index.html">Inicio</a> <!-- Enlace a página principal -->
+      <a href="cursos.html">Cursos</a> <!-- Enlace a catálogo de cursos -->
+      <a href="noticias.html">Noticias</a> <!-- Enlace a blog de noticias -->
+      <a href="servicios.html">Servicios</a> <!-- Enlace a formulario de solicitudes -->
+      <a href="foro.html">Foro</a> <!-- Enlace a lista de temas de discusión -->
+      <a href="buscador.html">Buscar</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Sección hero: primer impacto visual -->
+    <section id="hero">
+      <h2>Aprende Inferencia Estadística paso a paso</h2> <!-- Mensaje clave para el visitante -->
+      <p>Videos, cuestionarios, tareas y mapas mentales 100 % online.</p> <!-- Beneficios rápidos -->
+      <a class="btn" href="cursos.html">Ver cursos</a> <!-- Botón principal que lleva al catálogo -->
+    </section>
+
+    <!-- Mini-listado de noticias para generar interés -->
+    <section id="news-preview">
+      <h3>Últimas noticias</h3>
+      <article>
+        <h4>Publicada guía de IC bayesianos</h4> <!-- Título de la noticia -->
+        <p>Descarga la guía gratuita y compártela.</p> <!-- Resumen corto -->
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 – Bioestadística Fácil</p> <!-- Aviso de copyright -->
+  </footer>
+</body>
+
+<!-- Carga asíncrona de Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-451727188"></script>
+<script>
+  window.dataLayer = window.dataLayer || []; // Array para almacenar eventos
+  function gtag(){dataLayer.push(arguments);} // Función helper que envía datos a GA
+  gtag('js', new Date());                     // Registra fecha de carga
+  gtag('config', 'G-XXXXXXXXXX');             // Configura la propiedad con tu ID
+</script>
+
 </html>

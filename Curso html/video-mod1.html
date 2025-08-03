@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Video – Módulo 1</title>
+  <link rel="stylesheet" href="estilos.css">
+  <style>
+    .video-container {
+      max-width: 720px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,.15);
+    }
+    video { width: 100%; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Video – Módulo 1: Parámetro vs Estadístico</h1>
+    <nav>
+      <a href="cursos.html">← Volver a Cursos</a>
+    </nav>
+  </header>
+
+  <main class="video-container">
+    <p>Concepto clave de la unidad:</p>
+    <video controls poster="img/video-cover-mod1.jpg">
+      <!-- Opción 1: archivo local -->
+      <source src="videos/modulo1-parametro-estadistico.mp4" type="video/mp4">
+      <!-- Opción 2: YouTube (si aún no tienes el mp4)
+      <iframe width="720" height="405"
+              src="https://www.youtube.com/embed/VIDEO_ID"
+              title="Parámetro vs Estadístico"
+              frameborder="0" allowfullscreen>
+      </iframe>
+      -->
+      Tu navegador no soporta video HTML5.
+    </video>
+
+    <p><a href="quiz-mod1.html" class="btn">Resolver quiz</a></p>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 – Bioestadística Fácil</p>
+  </footer>
+</body>
+</html>

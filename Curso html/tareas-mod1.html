@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Tareas – Módulo 1</title>
+  <link rel="stylesheet" href="estilos.css">
+  <style>
+    .tareas { max-width: 600px; margin: 40px auto; background:#fff; padding:20px; border-radius:8px; }
+    .tarea { margin: 10px 0; }
+    .progress { height: 20px; background:#eee; border-radius:10px; overflow:hidden; margin-top:15px; }
+    .progress-bar { width: 0%; height:100%; background:#2E8B57; transition: width .4s; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Tareas – Módulo 1</h1>
+    <nav>
+      <a href="cursos.html">← Volver a Cursos</a>
+    </nav>
+  </header>
+
+  <main class="tareas">
+    <h2>Actividades obligatorias</h2>
+    <label class="tarea">
+      <input type="checkbox" data-tarea> Ver video introductorio
+    </label><br>
+    <label class="tarea">
+      <input type="checkbox" data-tarea> Leer apunte teórico
+    </label><br>
+    <label class="tarea">
+      <input type="checkbox" data-tarea> Resolver quiz
+    </label><br>
+    <label class="tarea">
+      <input type="checkbox" data-tarea> Ejercicio guiado en R
+    </label>
+    <label class="tarea">
+      <input type="checkbox" data-tarea> Participar en foro
+    </label>
+    <div class="progress">
+      <div class="progress-bar" id="barra"></div>
+    </div>
+    <p id="porcentaje">0 % completado</p>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 – Bioestadística Fácil</p>
+  </footer>
+
+  <script>
+    const checks = document.querySelectorAll('[data-tarea]');
+    const barra  = document.getElementById('barra');
+    const porc   = document.getElementById('porcentaje');
+    const total  = checks.length;
+
+    function actualizar() {
+      const hechas = [...checks].filter(c => c.checked).length;
+      const porcentaje = Math.round((hechas / total) * 100);
+      barra.style.width = porcentaje + '%';
+      porc.textContent  = porcentaje + ' % completado';
+    }
+    checks.forEach(c => c.addEventListener('change', actualizar));
+  </script>
+</body>
+</html>

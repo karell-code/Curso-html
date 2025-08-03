@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz – Módulo 1</title>
+  <link rel="stylesheet" href="estilos.css">
+  <style>
+    .quiz { max-width: 500px; margin: 40px auto; background:#fff; padding:20px; border-radius:8px;}
+    .opcion { margin:8px 0; }
+    #resultado { margin-top:15px; font-weight:bold; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Quiz Módulo 1 – Introducción</h1>
+    <nav>
+      <a href="cursos.html">← Volver a Cursos</a>
+    </nav>
+  </header>
+
+  <main>
+    <form class="quiz" id="formQuiz">
+      <p>1. ¿Qué diferencia hay entre parámetro y estadístico?</p>
+      <label class="opcion"><input type="radio" name="p1" value="a"> a) Son sinónimos</label><br>
+      <label class="opcion"><input type="radio" name="p1" value="b"> b) Parámetro es fijo y desconocido; estadístico se calcula con la muestra</label><br>
+      <label class="opcion"><input type="radio" name="p1" value="c"> c) Solo se usan en poblaciones infinitas</label>
+
+      <p>2. En inferencia frecuentista, ¿qué distribución suele usarse para la media muestral cuando n ≥ 30?</p>
+      <label class="opcion"><input type="radio" name="p2" value="a"> a) Exact binomial</label><br>
+      <label class="opcion"><input type="radio" name="p2" value="b"> b) Normal (por TCL)</label><br>
+      <label class="opcion"><input type="radio" name="p2" value="c"> c) Poisson</label>
+
+      <p>3. Selecciona la afirmación correcta:</p>
+      <label class="opcion"><input type="radio" name="p3" value="a"> a) Un IC del 95 % garantiza que el parámetro está dentro</label><br>
+      <label class="opcion"><input type="radio" name="p3" value="b"> b) A mayor tamaño muestral, el error estándar disminuye</label><br>
+      <label class="opcion"><input type="radio" name="p3" value="c"> c) El sesgo siempre es cero en estimadores insesgados</label>
+
+      <button type="submit">Corregir</button>
+    </form>
+
+    <p id="resultado"></p><a href="certificado-mod1.html" class="btn" style="display:none;" id="btnCert">Descargar certificado</a>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 – Bioestadística Fácil</p>
+  </footer>
+
+<script>
+  /* Objeto con las respuestas correctas */
+  const soluciones = { p1:'b', p2:'b', p3:'b' };
+
+  /* Referencias a elementos del DOM */
+  const form     = document.getElementById('formQuiz');   // Formulario completo
+  const resultado= document.getElementById('resultado');  // Párrafo de resultados
+  const btnCert  = document.getElementById('btnCert');    // Botón oculto de certificado
+
+  /* Escuchar cuando el usuario pulse “Corregir” */
+  form.addEventListener('submit', e => {
+    e.preventDefault();                                   // Evita recargar la página
+    let score = 0;                                        // Contador de aciertos
+
+    /* Recorre cada pregunta y compara respuestas */
+    Object.keys(soluciones).forEach(p => {
+      const resp = form.querySelector(`input[name="${p}"]:checked`);
+      if (resp && resp.value === soluciones[p]) score++;  // Incrementa si es correcta
+    });
+
+    /* Muestra texto de resultados */
+    resultado.textContent = `Has acertado ${score} de 3 preguntas.`;
+    resultado.style.color = score === 3 ? 'green' : 'orange';
+
+    /* LÍNEA NUEVA: muestra el botón solo si obtuvo 3/3 */
+    btnCert.style.display = (score === 3) ? 'inline-block' : 'none';
+  });
+</script>
+</body>
+</html>

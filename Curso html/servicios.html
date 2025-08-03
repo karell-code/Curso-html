@@ -1,0 +1,66 @@
+<body>
+  <header>
+    <h1>Solicita nuestros servicios</h1>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="cursos.html">Cursos</a>
+      <a href="noticias.html">Noticias</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="foro.html">Foro</a>
+      <a href="buscador.html">Buscar</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="servicios">
+      <h2>¿Qué necesitas?</h2>
+      <!-- Formulario que envía datos a Google Apps Script -->
+<form action="https://script.google.com/macros/s/AKfycby1PNxT-jG_2lxIFaHvRMBtjeIenVwDimCnhZ_GTzZmz69fyUAjVzi9Hk7fZn_Nw5Q0Bg/exec" method="post">
+  <!-- Campo oculto para redirigir después de enviar (opcional) -->
+  <input type="hidden" name="redirect" value="https://karell-code.github.io/Curso-html/gracias.html">
+        <label>
+          Nombre / Institución
+          <input type="text" name="nombre" required>
+        </label>
+
+        <label>
+          Correo electrónico
+          <input type="email" name="correo" required>
+        </label>
+
+        <label>
+          Tipo de servicio
+          <select name="tipo">
+            <option>Análisis de datos</option>
+            <option>Revisión estadística</option>
+            <option>Tutoría personalizada</option>
+            <option>Consultoría completa</option>
+          </select>
+        </label>
+
+        <label>
+          Descripción breve del proyecto
+          <textarea name="mensaje" rows="4" placeholder="Objetivos, tamaño muestral, software que usas…" required></textarea>
+        </label>
+
+        <label>
+          Fecha límite
+          <input type="date" name="fecha">
+        </label>
+
+          <label>
+          Presupuesto proyecto
+          <input type="number">
+        </label>
+
+        <button type="submit">Enviar solicitud</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 – Bioestadística Fácil</p>
+  </footer>
+</body>
+
+
